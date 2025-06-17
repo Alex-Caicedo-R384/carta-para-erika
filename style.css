@@ -1,0 +1,540 @@
+/* Reinicio y Estilos Generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Baloo 2', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #fff0f5, #ffe6e8);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  animation: gradientShift 15s ease infinite;
+  background-size: 200% 200%;
+}
+
+/* Contador de Fecha */
+.date-counter {
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.2rem;
+  color: #5a2c40;
+  background: rgba(255, 245, 245, 0.85);
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  z-index: 1000;
+  max-width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 182, 193, 0.3);
+  animation: floatDate 4s ease-in-out infinite;
+  background: rgba(255, 245, 245, 0.85) !important; /* Fallback */
+  backdrop-filter: blur(5px);
+}
+
+@keyframes floatDate {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, -5px); }
+}
+
+.date-counter .fas {
+  color: #ff6b81;
+  margin: 0 0.5rem;
+  animation: heartbeat 1.5s ease infinite;
+}
+
+/* Sobre */
+.envelope-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.heart-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: #ff4444;
+  text-shadow: 0 2px 5px rgba(255, 0, 0, 0.3);
+  animation: pulse 2s ease infinite;
+}
+
+/* Contenedor y Carta */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1.5rem;
+}
+
+#toggle-button {
+  padding: 1.2rem 2.5rem;
+  font-size: 1.3rem;
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ff99aa, #ff6b81);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 3;
+  touch-action: manipulation;
+  box-shadow: 0 8px 20px rgba(255, 105, 129, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+#toggle-button::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  transform: rotate(30deg);
+  transition: all 0.5s ease;
+}
+
+#toggle-button:hover {
+  transform: scale(1.1) translateY(-3px);
+  box-shadow: 0 12px 25px rgba(255, 105, 129, 0.6);
+}
+
+#toggle-button:hover::before {
+  left: 100%;
+}
+
+#toggle-button:active {
+  transform: scale(0.98);
+}
+
+.letter {
+  display: none;
+  max-width: 600px;
+  width: 90%;
+  margin: 2rem auto;
+  background: transparent;
+  z-index: 5;
+  animation: fadeIn 0.8s ease-out forwards;
+  perspective: 1000px;
+}
+
+.letter-inner {
+  background: url('https://www.transparenttextures.com/patterns/cream-paper.png') repeat, #fffaf0;
+  border-radius: 15px;
+  padding: 2.5rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.letter-inner:hover {
+  transform: rotateY(5deg) rotateX(2deg);
+}
+
+.letter-inner::before {
+  content: '♥';
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 2rem;
+  color: #ff6b81;
+  opacity: 0.2;
+}
+
+.letter-inner::after {
+  content: '♥';
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  color: #ff6b81;
+  opacity: 0.2;
+}
+
+.heart-border {
+  border: 0.4rem double #ffb6c1;
+  border-radius: 12px;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  position: relative;
+}
+
+.heart-border::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 2px dashed rgba(255, 182, 193, 0.5);
+  border-radius: 15px;
+  pointer-events: none;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.title-img {
+  width: 3rem;
+  height: auto;
+  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.2));
+  animation: float 3s ease-in-out infinite;
+}
+
+.title-primary {
+  color: #b76e79;
+  margin: 0 1rem;
+  font-size: 2.2rem;
+  font-family: 'Great Vibes', cursive;
+  text-align: center;
+  flex-grow: 1;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to right, #ff6b81, #b76e79);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.courier-text p {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  color: #4a2c3e;
+  text-align: justify;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.courier-text p::before {
+  content: '❧';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: rgba(255, 105, 129, 0.5);
+}
+
+.highlight-bold {
+  font-weight: bold;
+  color: #a55c6a;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: inline-block;
+}
+
+.highlight-bold::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #ff6b81, transparent);
+}
+
+.centered-text {
+  text-align: center;
+  font-size: 1.3rem;
+  margin: 2rem 0;
+  font-family: 'Dancing Script', cursive;
+  position: relative;
+}
+
+.highlight-pulse {
+  display: inline-block;
+  animation: pulse 2s infinite;
+  color: #ff6b81;
+  font-weight: bold;
+  text-shadow: 0 2px 4px rgba(255, 0, 0, 0.2);
+}
+
+.signature {
+  text-align: center;
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  color: #4a2c3e;
+  position: relative;
+}
+
+.signature-line {
+  display: inline-block;
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #b76e79, transparent);
+  margin: 0.5rem 0;
+}
+
+.signature-large {
+  font-size: 2rem;
+  background: linear-gradient(to right, #ff6b81, #b76e79);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+.signature-img {
+  vertical-align: middle;
+  margin-left: 0.5rem;
+  width: 3rem;
+  height: 3rem;
+  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.2));
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Animaciones */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.1); }
+  50% { transform: scale(1); }
+  75% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes sparkle {
+  0% { transform: scale(0); opacity: 1; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px) rotateX(-10deg); }
+  to { opacity: 1; transform: translateY(0) rotateX(0); }
+}
+
+/* Elementos flotantes */
+.floating-heart {
+  position: fixed;
+  pointer-events: none;
+  font-size: 1.5rem;
+  color: #ff6b81;
+  opacity: 0.7;
+  z-index: 1;
+  animation: float 6s ease-in-out infinite, fade 8s ease-in-out infinite;
+}
+
+.floating-img {
+  width: 2rem;
+  height: auto;
+  pointer-events: none;
+}
+
+/* Control de Música */
+.music-control {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: linear-gradient(135deg, #ff99cc, #ff6b81);
+  color: #fff;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.5rem;
+  z-index: 10;
+  box-shadow: 0 8px 20px rgba(255, 105, 129, 0.4);
+  touch-action: manipulation;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.music-control:hover {
+  transform: scale(1.1) rotate(15deg);
+  box-shadow: 0 10px 25px rgba(255, 105, 129, 0.6);
+}
+
+.music-control::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 50%;
+  border: 2px dashed rgba(255, 255, 255, 0.4);
+  animation: rotate 10s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Ajustes Responsivos */
+@media (max-width: 768px) {
+  .date-counter {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .envelope {
+    width: 11rem;
+    height: 7rem;
+  }
+
+  .heart-icon {
+    font-size: 1.8rem;
+  }
+
+  .title-primary {
+    font-size: 1.8rem;
+  }
+
+  .title-img, .signature-img {
+    width: 2.5rem;
+  }
+
+  #toggle-button {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+  }
+
+  .letter-inner {
+    padding: 2rem;
+  }
+
+  .heart-border {
+    padding: 1.2rem;
+  }
+
+  .courier-text p {
+    font-size: 1rem;
+  }
+
+  .centered-text {
+    font-size: 1.1rem;
+  }
+
+  .signature {
+    font-size: 1.3rem;
+  }
+
+  .signature-large {
+    font-size: 1.8rem;
+  }
+
+  .music-control {
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .date-counter {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    top: 1rem;
+  }
+
+  .envelope {
+    width: 9rem;
+    height: 5.5rem;
+  }
+
+  .heart-icon {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+
+  #toggle-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .letter-inner {
+    padding: 1.5rem;
+  }
+
+  .heart-border {
+    padding: 1rem;
+  }
+
+  .title-primary {
+    font-size: 1.5rem;
+  }
+
+  .title-img, .signature-img {
+    width: 2rem;
+  }
+
+  .courier-text p {
+    font-size: 0.9rem;
+    padding-left: 1rem;
+  }
+
+  .courier-text p::before {
+    font-size: 0.8rem;
+  }
+
+  .centered-text {
+    font-size: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .signature {
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+  }
+
+  .signature-large {
+    font-size: 1.5rem;
+  }
+
+  .music-control {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.1rem;
+    bottom: 1rem;
+    right: 1rem;
+  }
+}

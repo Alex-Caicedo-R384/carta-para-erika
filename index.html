@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>💌 Carta de Amor para Mi Princesa 💖</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Dancing+Script:wght@600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <!-- Animate.css -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+  <!-- CSS Externo -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="date-counter animate__animated animate__fadeIn" role="banner">
+    <i class="fas fa-heart" aria-hidden="true"></i> 
+    <span id="date-counter-text">Juntos desde nuestro inicio especial</span> 
+    <i class="fas fa-heart" aria-hidden="true"></i>
+  </header>
+
+  <div class="envelope-container animate__animated animate__bounceIn">
+    <div class="envelope">
+      <div class="heart-icon" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <div class="hearts-container"></div>
+  <div class="snoopies-container"></div>
+
+  <main class="container">
+    <button id="toggle-button" class="animate__animated animate__pulse animate__infinite animate__slower" aria-label="Abrir o cerrar la carta">
+      Abrir Carta 💌
+    </button>
+    <section class="letter" id="letter" role="region" aria-hidden="true">
+      <div class="letter-inner">
+        <div class="heart-border">
+          <div class="title">
+            <img src="https://cdn.inspireuplift.com/uploads/images/seller_products/29661/1706942570_2712231057-cute-snoopy-valentine-heart-svg-2712231057png.png" alt="Corazón decorativo" class="title-img" onerror="this.src='fallback-heart.png'">
+            <h1 class="title-primary">Mi Princesita Bella Hermosa</h1>
+            <img src="https://cdn.inspireuplift.com/uploads/images/seller_products/29661/1706942570_2712231057-cute-snoopy-valentine-heart-svg-2712231057png.png" alt="Corazón decorativo" class="title-img" onerror="this.src='fallback-heart.png'">
+          </div>
+          <div class="courier-text">
+            <p>Mi niña hermosa, mi princesa, mi todo, eres lo que le da sentido a mi mundo. Te quiero desear un <span class="highlight-bold">Feliz Cumpleaños</span>. Este sábado será la primera vez que pasemos el cumpleaños de uno de los dos de una manera más cercana y especial. Espero que esta carta te llegue al fondo del corazón, pues la escribo exclusivamente para ti.</p>
+            
+            <p>Cada amanecer es una nueva oportunidad para crecer y demostrarte lo especial que eres, tanto como persona como para mí. La forma en que te miro es única, distinta a todo lo que he conocido. No encuentro palabras suficientes para expresar cuánto te amo, porque eres mi alegría, mi inspiración y mi mayor fortuna.</p>
+            
+            <p>Admiro todo de ti: tu fuerza, tu bondad, y cómo transformas lo más simple en algo hermoso, como tú. Me siento afortunado por compartir momentos contigo, aunque sean pocos, los guardo en mi corazón con inmenso cariño.</p>
+            
+            <p>Te respeto profundamente por la gran persona que eres, por tus sueños, tu valentía y la pasión con la que enfrentas cada desafío. Mi niña, aprendo de ti cada día. No deseo nada más que verte sonreír, hacerte feliz y estar a tu lado en cada momento, cuando me necesites o cuando yo te necesite.</p>
+            
+            <p>Hoy, recuerda que siempre estaré contigo, apoyándote, queriéndote, amándote y construyendo un futuro donde juntos cumplamos nuestras metas y sueños.</p>
+            
+            <p class="centered-text">
+              <span class="highlight-pulse">Feliz Cumpleaños N° 21, Niña de mis ojos</span> 🌹
+            </p>
+          </div>
+          <div class="signature">
+            Estaré Para Ti Hoy y Siempre,<br>
+            <span class="signature-large">Alex Caicedo Ramos</span>
+            <img src="https://image.spreadshirtmedia.net/image-server/v1/designs/308828821,width=178,height=178.png" alt="Icono decorativo de la firma" class="signature-img" onerror="this.src='fallback-signature.png'">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="music-control" id="music-control" role="button" aria-label="Controlar música de fondo">
+    <i class="fas fa-music" aria-hidden="true"></i>
+    <audio id="background-music" loop preload="auto" src="audio/background_music.mp3"></audio>
+  </div>
+
+  <!-- JavaScript Externo -->
+  <script src="script.js" defer></script>
+</body>
+</html>
